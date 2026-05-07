@@ -1,0 +1,336 @@
+@import url('https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@400;600;700;900&family=Barlow:wght@300;400;500&display=swap');
+
+:root {
+  --bg: #0a0a0a;
+  --surface: #141414;
+  --card: #1a1a1a;
+  --border: #2a2a2a;
+  --accent: #e8ff47;
+  --accent2: #ff4757;
+  --text: #f0f0f0;
+  --muted: #666;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  -webkit-tap-highlight-color: transparent;
+}
+
+html,
+body {
+  width: 100%;
+  height: 100%;
+  background: var(--bg);
+  color: var(--text);
+  font-family: 'Barlow', sans-serif;
+}
+
+#app {
+  width: 100%;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+/* HEADER */
+
+.header {
+  padding: 16px 20px 12px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border-bottom: 1px solid var(--border);
+  background: var(--bg);
+}
+
+.header-logo {
+  font-family: 'Barlow Condensed', sans-serif;
+  font-weight: 900;
+  font-size: 28px;
+  letter-spacing: -1px;
+  color: var(--accent);
+}
+
+.header-logo span {
+  color: var(--text);
+}
+
+.header-date {
+  font-size: 12px;
+  color: var(--muted);
+  font-weight: 500;
+  text-transform: uppercase;
+}
+
+/* TABS */
+
+.nav-tabs {
+  display: flex;
+  gap: 6px;
+  padding: 12px 16px 0;
+  overflow-x: auto;
+}
+
+.tab-btn {
+  padding: 8px 16px;
+  border-radius: 20px;
+  border: 1px solid var(--border);
+  background: transparent;
+  color: var(--muted);
+  cursor: pointer;
+  font-family: 'Barlow Condensed', sans-serif;
+  font-weight: 700;
+}
+
+.tab-btn.active {
+  background: var(--accent);
+  color: black;
+  border-color: var(--accent);
+}
+
+/* MAIN */
+
+.main {
+  flex: 1;
+  padding: 16px;
+}
+
+/* CARD */
+
+.exercise-card {
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: 16px;
+  margin-bottom: 12px;
+  overflow: hidden;
+}
+
+.card-header {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 16px;
+  cursor: pointer;
+}
+
+.card-name {
+  flex: 1;
+  font-family: 'Barlow Condensed', sans-serif;
+  font-size: 18px;
+  font-weight: 700;
+  text-transform: uppercase;
+}
+
+.card-weight {
+  font-family: 'Barlow Condensed', sans-serif;
+  font-size: 28px;
+  font-weight: 900;
+  color: var(--accent);
+}
+
+.card-weight span {
+  font-size: 13px;
+  color: var(--muted);
+}
+
+.chevron {
+  color: var(--muted);
+}
+
+.card-controls {
+  display: none;
+  padding: 0 16px 16px;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.card-controls.open {
+  display: flex;
+}
+
+.weight-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background: var(--surface);
+  border-radius: 12px;
+  padding: 4px;
+}
+
+.weight-btn {
+  width: 52px;
+  height: 52px;
+  border: none;
+  border-radius: 10px;
+  font-size: 22px;
+  cursor: pointer;
+}
+
+.weight-btn.minus {
+  background: #222;
+  color: white;
+}
+
+.weight-btn.plus {
+  background: var(--accent);
+  color: black;
+}
+
+.weight-display {
+  font-size: 32px;
+  font-family: 'Barlow Condensed', sans-serif;
+  font-weight: 900;
+  text-align: center;
+}
+
+.weight-unit {
+  text-align: center;
+  color: var(--muted);
+  font-size: 13px;
+}
+
+.step-row {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.step-btns {
+  display: flex;
+  gap: 5px;
+}
+
+.step-btn {
+  padding: 5px 12px;
+  border-radius: 8px;
+  border: 1px solid var(--border);
+  background: transparent;
+  color: var(--muted);
+  cursor: pointer;
+}
+
+.step-btn.active {
+  border-color: var(--accent);
+  color: var(--accent);
+}
+
+.last-session {
+  background: var(--surface);
+  border-radius: 8px;
+  padding: 10px;
+  font-size: 12px;
+  color: var(--muted);
+}
+
+.card-actions {
+  display: flex;
+  gap: 8px;
+}
+
+.btn-save,
+.btn-add-ex {
+  flex: 1;
+  padding: 14px;
+  border: none;
+  border-radius: 10px;
+  background: var(--accent);
+  color: black;
+  font-family: 'Barlow Condensed', sans-serif;
+  font-size: 15px;
+  font-weight: 700;
+  cursor: pointer;
+}
+
+.btn-delete {
+  padding: 14px 16px;
+  border-radius: 10px;
+  border: 1px solid #333;
+  background: transparent;
+  color: var(--muted);
+  cursor: pointer;
+}
+
+/* ADD PANEL */
+
+.add-panel {
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: 16px;
+  padding: 16px;
+}
+
+.add-panel h3 {
+  margin-bottom: 16px;
+  font-family: 'Barlow Condensed', sans-serif;
+}
+
+.form-group {
+  margin-bottom: 12px;
+}
+
+.form-label {
+  display: block;
+  margin-bottom: 6px;
+  font-size: 12px;
+  color: var(--muted);
+}
+
+.form-input {
+  width: 100%;
+  padding: 13px;
+  border-radius: 10px;
+  border: 1px solid var(--border);
+  background: var(--surface);
+  color: white;
+}
+
+/* FAB */
+
+.fab {
+  position: fixed;
+  right: 20px;
+  bottom: 20px;
+  width: 58px;
+  height: 58px;
+  border: none;
+  border-radius: 18px;
+  background: var(--accent);
+  color: black;
+  font-size: 28px;
+  cursor: pointer;
+}
+
+/* TOAST */
+
+.toast {
+  position: fixed;
+  bottom: 90px;
+  left: 50%;
+  transform: translateX(-50%);
+  background: var(--accent);
+  color: black;
+  padding: 10px 22px;
+  border-radius: 20px;
+  opacity: 0;
+  transition: 0.3s;
+}
+
+.toast.show {
+  opacity: 1;
+}
+
+.section-title {
+  margin-bottom: 12px;
+  color: var(--muted);
+  font-family: 'Barlow Condensed', sans-serif;
+  font-weight: 900;
+  letter-spacing: 2px;
+}
+
+.empty-state {
+  text-align: center;
+  padding: 50px 20px;
+  color: var(--muted);
+}
